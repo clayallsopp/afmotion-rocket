@@ -1,5 +1,10 @@
 module AFMotion
   module Rocket
+    def self.included(klass)
+      klass.send(:alias_method,"headers_without_wrapper", "headers")
+      klass.send(:alias_method,"headers", "headers_with_wrapper")
+    end
+
     def rocket_client
       @rocket_client ||= begin
         client = AFRocketClient.alloc.init
@@ -38,9 +43,7 @@ module AFMotion
       end
     end
 
-    alias_method "headers_without_wrapper", "headers"
-
-    def headers
+    def headers_with_wrapper
       @headers_wrapper ||= HeaderWrapper.new(self)
     end
   end
