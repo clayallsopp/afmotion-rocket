@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    afmotion-rocket (0.0.1)
+    afmotion-rocket (0.0.2)
       afmotion (~> 2.0)
 
 GEM
