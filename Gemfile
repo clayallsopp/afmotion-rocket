@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'rake'
-# Add your dependencies here:
+# Specify your gem's dependencies in motion-settings.gemspec
+gemspec
